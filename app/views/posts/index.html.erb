@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+  <tr>
+  	<td>Título:	</td>
+    <td><%= post.titulo %></td><br />
+	<td>Avance:	</td>
+    <td><%= post.avances %></td><br />
+    <td>Terminado?:	</td>
+    <td><%= post.terminado %></td><br />
+    <td>Comentarios:	</td>
+    <td><%= post.commentarios %></td><br />
+    <td>Nivel:	</td>
+    <td><%= post.nivel %></td><br />
+    <td>Recomendación:	</td>
+    <td><%= post.recomendacion %></td><br />
+  </tr>
+<% end %>
+<br />
+<br />
+<%= link_to 'New Post', new_post_path %>

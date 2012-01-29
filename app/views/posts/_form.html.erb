@@ -1,0 +1,41 @@
+<%= form_for(@post) do |post_form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= post_form.label :titulo %><br />
+    <%= post_form.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= post_form.label :avances %><br />
+    <%= post_form.text_field :avances %>
+  </div>
+  <div class="field">
+    <%= post_form.label :terminado %><br />
+    <%= post_form.check_box :terminado %>
+  </div>
+  <div class="field">
+    <%= post_form.label :nivel %><br />
+    <%= post_form.text_field :nivel %>
+  </div>
+  <div class="field">
+    <%= post_form.label :commentarios %><br />
+    <%= post_form.text_area :commentarios %>
+  </div>
+  <div class="field">
+    <%= post_form.label :recomendacion%><br />
+    <%= post_form.text_area :recomendacion %>
+  </div>
+  <div class="actions">
+    <%= post_form.submit %>
+  </div>
+
+<% end %>

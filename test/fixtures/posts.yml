@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titulo: MyString
+  avances: MyText
+  terminado: false
+  commentarios: MyText
+  nivel: MyString
+  recomendacion: 1
+
+two:
+  titulo: MyString
+  avances: MyText
+  terminado: false
+  commentarios: MyText
+  nivel: MyString
+  recomendacion: 1

@@ -16,7 +16,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   
   config.sign_out_via = :get
-
+  require "omniauth-facebook"
   config.omniauth :facebook, '376560905692378', '91277a861c0f21fa4989c99bb6323dc2'
 
   # ==> Configuration for any authentication mechanism

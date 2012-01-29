@@ -10,32 +10,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= post_form.label :titulo %><br />
-    <%= post_form.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= post_form.label :avances %><br />
-    <%= post_form.text_field :avances %>
-  </div>
-  <div class="field">
-    <%= post_form.label :terminado %><br />
-    <%= post_form.check_box :terminado %>
-  </div>
-  <div class="field">
-    <%= post_form.label :nivel %><br />
-    <%= post_form.text_field :nivel %>
-  </div>
-  <div class="field">
-    <%= post_form.label :commentarios %><br />
-    <%= post_form.text_area :commentarios %>
-  </div>
-  <div class="field">
-    <%= post_form.label :recomendacion%><br />
-    <%= post_form.text_area :recomendacion %>
-  </div>
-  <div class="actions">
-    <%= post_form.submit "Postear",input_html => :class => "btn primary"} %>
-  </div>
-
+<div class="span8" style="
+  	text-align: left;
+  	margin-top: 30px;
+  	background-color: #FFFFFF;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	padding-left: 30px;">
+	<table>
+  <tr>
+    <td><%= post_form.label :titulo %></td>
+	<td style="form-staked"><%= post_form.text_field :titulo %></td>
+  </tr>
+  <tr>
+  <tr>
+    <td><%= post_form.label :avances %></td>
+    <td><%= post_form.text_field :avances %></td>
+  </tr>
+ <tr>
+    <td><%= post_form.label :terminado %></td>
+    <td><%= post_form.check_box :terminado %></td>
+  </tr>
+  <tr>
+    <td><%= post_form.label :nivel %></td>
+    <td><%= post_form.text_field :nivel %></td>
+  </tr>
+   <tr>
+    <td><%= post_form.label :commentarios %></td>
+    <td style="max-height:  10px"><%= post_form.text_area :commentarios, :style => "height: 80px" %></td>
+  </tr>
+  <tr>
+    <td><%= post_form.label :recomendacion%></td>
+    <td><%= post_form.text_area :recomendacion, :style => "height: 10px" %></td>
+  </tr>
+  <tr>
+    <td style="margin-left: 40px"><%= post_form.submit "Postear" , :class => "btn primary"%></td>
+  </tr>
+  </table>
+</div>
 <% end %>

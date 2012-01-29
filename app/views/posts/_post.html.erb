@@ -1,0 +1,34 @@
+<% div_for post do %>
+<table style="
+  	text-align: left;
+  	margin-top: 30px;
+  	background-color: #FFFFFF;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;">
+  	<tr>
+  		<td>Título:	</td>
+    	<td style="form-staked"><%= post.titulo %></td>
+    </tr>
+	<tr>
+		<td>Avance:	</td>
+    	<td><%= post.avances %></td>
+    </tr>
+    <tr>
+    	<td>Terminado?:	</td>
+    	<td><%= post.terminado %></td>
+    </tr>
+    <tr style="form-staked">
+    	<td>Comentarios:	</td>
+    	<td><%= post.commentarios %></td>
+    </tr>
+    <tr>
+    	<td>Nivel:</td>
+    	<td><%= post.nivel %></td>
+    </tr>
+    <tr>
+    	<td>Recomendación:	</td>
+    	<td><%= post.recomendacion%></td>
+   	</tr>
+  </table>
+<% end %>

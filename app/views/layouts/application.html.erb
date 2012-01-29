@@ -6,9 +6,42 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style='padding-top: 40px;background-image: url(http://i.imgur.com/TT16s.jpg);'>
+<div class="container" >
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js">
+</script>
 
+<div class="topbar">
+	<div class="topbar-inner">
+		<div class="container">
+	<ul>
+  		<li><center><a href="#"><%= image_tag "swlectura2.png"%></a></center></li>
+	</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+   FB.init({
+      appId: "271615169549029",
+      cookie: true,
+      status: true,
+      xfbml: true
+   });
+</script>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if current_user -%>
+  <%= link_to_function "logout [#{current_user.name}]", 'App.logout()' %>
+<% else -%>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% end %>
+
+<style='text-align: &#x2190;'>
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -1,19 +1,66 @@
-<% @posts.each do |post| %>
+ 
+  <div class="container" style="background-color: #EEEEEE">
+  	<div class="row">
+  	<div class="span4">
+  		<ul class="media-grid">
+  			<li>
+  				<div style="margin-left: 80px; margin-top: 30px">
+  					<%= image_tag "miguel-de-cervantes.jpeg", :width => "130px", :height => "130px" %>
+  				</div>
+  			</li>
+  		</ul>
+  		<%= image_tag "badges.png", :width => "130px", :style => "padding-left: 60px; padding-topt: 20px"%>
+  	</div>
+  	
+  	<div class="span8">
+	<%= form_for Post.new, :remote => true do |post_form| %>
+	<table  style="
+  	text-align: left;
+  	margin-top: 30px;
+  	background-color: #FFFFFF;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	padding-left: 30px;">
   <tr>
-  	<td>Título:	</td>
-    <td style="form-staked"><%= post.titulo %></td><br />
-	<td>Avance:	</td>
-    <td><%= post.avances %></td><br />
-    <td>Terminado?:	</td>
-    <td><%= post.terminado %></td><br />
-    <td style="form-staked">Comentarios:	</td>
-    <td><%= post.commentarios %></td><br />
-    <td>Nivel:</td>
-    <td><%= post.nivel %></td><br />
-    <td>Recomendación:	</td>
-    <td><%= post.recomendacion%></td><br />
+    <td><%= post_form.label :titulo %></td>
+	<td style="form-staked"><%= post_form.text_field :titulo %></td>
   </tr>
+  <tr>
+  <tr>
+    <td><%= post_form.label :avances %></td>
+    <td><%= post_form.text_field :avances %></td>
+  </tr>
+ <tr>
+    <td><%= post_form.label :terminado %></td>
+    <td><%= post_form.check_box :terminado %></td>
+  </tr>
+  <tr>
+    <!-- <td><%= post_form.label :nivel %></td>
+    <td><%= post_form.text_field :nivel %></td> -->
+  </tr>
+   <tr>
+    <td><%= post_form.label :commentarios %></td>
+    <td style="max-height:  10px"><%= post_form.text_area :commentarios, :style => "height: 80px" %></td>
+  </tr>
+  <tr>
+    <td><%= post_form.label :recomendacion%></td>
+    <td><%= post_form.text_area :recomendacion, :style => "height: 20px" %></td>
+  </tr>
+  <tr>
+    <td style="margin-left: 40px"><%= post_form.submit "Postear" , :class => "btn primary"%></td>
+  </tr>
+  </table>
+
 <% end %>
+<div class="rows" id="posts"> 
+	<%= render :partial => @posts, :locals => { :list => true } %>
+	</div>
+  </div>
+  <div class="span4" style="background: #838C45"></div> 
+ </div>
+</div>
+</div>
+
 <br />
 <br />
-<%= link_to 'New Post',new_post_path,:class => "btn primary" %>

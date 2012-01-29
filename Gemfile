@@ -19,8 +19,22 @@ end
 gem 'jquery-rails'
 gem 'ajaxful_rating'
 gem 'omniauth','~> 1.0' 
-gem 'devise','~> 1.5' 
+gem  'rspec' 
 
+gem 'devise', '1.5.0'
+gem 'omniauth-facebook', :git => "git://github.com/mkdynamic/omniauth-facebook.git"
+
+gem 'rspec-rails', :group => [:development, :test]
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', '< 0.8.3', :require => false
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -32,8 +46,3 @@ gem 'devise','~> 1.5'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', '~> 0.8.3', :require => false
-end

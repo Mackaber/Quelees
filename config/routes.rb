@@ -1,5 +1,10 @@
 Quelees::Application.routes.draw do
+  devise_for :users
+
   resources :posts
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "authentications"}
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
